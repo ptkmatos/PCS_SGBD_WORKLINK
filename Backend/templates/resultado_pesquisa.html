@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados da Pesquisa</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    strong {
+      font-weight: bold;
+    }
+    
+    a {
+      color: #0000EE;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resultados da Pesquisa</h1>
+  
+  <ul>
+    <li>
+      <strong>{{ nome }}</strong>
+      <p>{{ descricao }}</p>
+      <a href="https://exemplo.com/resultado1">Saiba mais</a>
+    </li>
+    <li>
+      <strong>Resultado 2</strong>
+      <p>Descrição do Resultado 2</p>
+      <a href="https://exemplo.com/resultado2">Saiba mais</a>
+    </li>
+    <li>
+      <strong>Resultado 3</strong>
+      <p>Descrição do Resultado 3</p>
+      <a href="https://exemplo.com/resultado3">Saiba mais</a>
+    </li>
+  </ul>
+</body>
+</html>

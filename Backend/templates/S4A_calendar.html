@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- TITLE, DESC, CHARSET, VIEWPORT -->
+    <title>Worklink - Calendario</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Offline Javascript Calendar App">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+
+    <!-- STYLESHEET + JAVASCRIPT -->
+    <script defer src="../static/S4B_calendar.js"></script>
+    <link rel="stylesheet" href="../static/S4C_calendar.css">
+  </head>
+  <body>
+    <!-- (A) PERIOD SELECTOR -->
+    <div id="calHead">
+      <button id="edit"  onclick="window.location.href='/perfil'">Voltar</button>
+      
+
+      <div id="calPeriod">
+        <input id="calBack" type="button" class="mi" value="&lt;">
+        <select id="calMonth"></select>
+        <input id="calYear" type="number">
+        <input id="calNext" type="button" class="mi" value="&gt;">
+      </div>
+      <input id="calAdd" type="button" class="mi" value="+">
+    </div>
+
+    <!-- (B) CALENDAR WRAPPER -->
+    <div id="calWrap">
+      <div id="calDays"></div>
+      <div id="calBody"></div>
+    </div>
+
+    <!-- (C) EVENT FORM -->
+    <dialog id="calForm"><form method="dialog">
+      <div id="evtCX">X</div>
+      <h2 class="evt100">Reunião</h2>
+      <div class="evt50">
+        <label>Começo</label>
+        <input id="evtStart" type="datetime-local" required>
+      </div>
+      <div class="evt50">
+        <label>Fim</label>
+        <input id="evtEnd" type="datetime-local" required>
+      </div>
+      <div class="evt50">
+        <label>Cor de Texto</label>
+        <input id="evtColor" type="color" value="#000000" required>
+      </div>
+      <div class="evt50">
+        <label>Cor de Fundo</label>
+        <input id="evtBG" type="color" value="#ffdbdb" required>
+      </div>
+      <div class="evt100">
+        <label>Evento</label>
+        <input id="evtTxt" type="text" required>
+      </div>
+      <div class="evt100">
+        <input type="hidden" id="evtID">
+        <input type="button" id="evtDel" value="Excluir">
+        <input type="submit" id="evtSave" value="Criar">
+      </div>
+    </form></dialog>
+  </body>
+</html>

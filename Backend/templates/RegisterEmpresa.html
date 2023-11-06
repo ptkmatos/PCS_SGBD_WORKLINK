@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Empresa · WorkLink</title>
+    <link rel="shortcut icon" href="../static/Wl.ico"type="image/x-icon">
+    <link rel="stylesheet" href="../static/style.css">
+<style>
+body {
+  background-color: #141034;
+}
+</style>
+</head>
+<body>
+  <div class="container_form">
+    <h1>Criar conta como Empresa</h1>
+    <form class="form" action="/signup_enterprise" method="post">
+        
+        <div class="form_grupo">
+            <label for="CNPJ" class="form_label">CNPJ</label>
+            <input type="text" name="cnpj" class="form_input" id="CNPJ" placeholder="CNPJ" required>
+        </div>
+
+        <div class="form_grupo">
+          <label for="Razão Social" class="form_label">Razão Social</label>
+          <input type="text" name="razao_social" class="form_input" id="Razão Social" placeholder="Razão Social" required>
+      </div>
+
+
+        <div class="form_grupo">
+            <label for="e-mail" class="form_label">Email</label>
+            <input type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com" required>
+        </div>
+        
+      <div class="form_grupo">
+        <label for="Telefone" class="form_label">Telefone</label>
+        <input type="text" name="telefone" class="form_input" id="Telefone" placeholder="Telefone" required>
+    </div>
+
+    <div class="form_grupo">
+      <label for="Conta" class="form_label">Conta bancária (xxxx/xxxxx-x)</label>
+      <input type="text" name="conta" class="form_input" id="Conta" placeholder="Conta" required>
+  </div>
+
+  <div class="form_grupo">
+     <label for="Senha" class="form_label">Senha</label>
+     <input type="password" name="senha" class="form_input" id="Senha" placeholder="Senha" required>
+
+  <div class="form_grupo">
+    <label for="Senha" class="form_label">CEP</label>
+    <input type="text" name="cep" class="form_input" id="Senha" placeholder="CEP (Insira apenas números)" required>
+  </div>
+        
+        <div class="form_message">
+                
+          <label for="message" class="form_message_label">Área de Negócio:</label>
+          <textarea name="area_negocio" id="Área de Negócio"  maxlength="100" style="resize: none; height: 20px; width: 270px;" class="form_input message_input" required></textarea>
+
+      </div>
+
+            <div class="submit">
+
+              <input type="hidden" name="acao" value="enviar">
+              <button type="submit" name="Submit" class="submit_btn" onclick="window.location.href='/'">Cadastrar-se</button>
+            
+            </div>
+
+            <div class="messages">
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <ul class="messages-list">
+                    {% for message in messages %}
+                      <li>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endwith %}
+            </div>
+    </form>
+
+</div><!--container_form-->
+    </body>
+</body>
+</html>

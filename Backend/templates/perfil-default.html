@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../static/stylePagina.css">
+    <title>Perfil · WorkLink</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="static/Wl.ico"type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="shortcut icon" href="../static/Wl.ico"type="image/x-icon">
+   
+	<script src="https://kit.fontawesome.com/e6223f541e.js" crossorigin="anonymous"></script>
+    <script defer src="../static/script.js"></script>
+    <style>
+ 
+ #myButton {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #0f0a30;
+    border-radius: 0.6em;
+    color: #0f0a30;
+    cursor: pointer;
+    display: inline;
+    align-self: center;
+    font-size: 1rem;
+    /* font-weight: 400; */
+    line-height: 1;
+    /* margin: 20px; */
+    /* padding: 1.2em 2.8em; */
+    text-decoration: none;
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+
+  #myButton {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px #cbee6d inset;
+  }
+}
+
+
+        #post-perfil{
+            color: #ABDB2A;
+        }
+        #pzinho{
+            margin-bottom: 0 !important;
+            font-size: 12px;
+        }
+    
+.profile-page .profile-header {
+    box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+    
+}
+
+.profile-page .profile-header .cover {
+    position: relative;
+    border-radius: .25rem .25rem 0 0;
+}
+
+
+.profile-page .profile-header .cover figure {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .profile-page .profile-header .cover figure {
+        height: 110px;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 2400px) {
+    .profile-page .profile-header .cover figure {
+        height: 280px;
+        overflow: hidden;
+    }
+}
+
+.profile-page .profile-header .cover figure img {
+    border-radius: .25rem .25rem 0 0;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .profile-page .profile-header .cover figure img {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 2400px) {
+    .profile-page .profile-header .cover figure img {
+        margin-top: -55px;
+    }
+}
+/*
+.profile-page .profile-header .cover .gray-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(rgb(39 0 44 / 0%), #ffffff 130%);
+}
+*/
+.profile-page .profile-header .cover .cover-body {
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.profile-page .profile-header .cover .cover-body .profile-pic {
+    border-radius: 50%;
+    width: 100px;
+}
+
+@media (max-width: 767px) {
+    .profile-page .profile-header .cover .cover-body .profile-pic {
+        width: 70px;
+    }
+}
+
+.profile-page .profile-header .cover .cover-body .profile-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 17px;
+}
+
+.profile-page .profile-header .header-links {
+    padding: 8px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 0 0 .25rem .25rem;
+}
+
+.profile-page .profile-header .header-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-page .profile-header .header-links ul li a {
+    color: #000;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    margin: 10px;
+}
+
+.profile-page .profile-header .header-links ul li:hover,
+.profile-page .profile-header .header-links ul li.active {
+    color: #ABDB2A;
+}
+
+.profile-page .profile-header .header-links ul li:hover a,
+.profile-page .profile-header .header-links ul li.active a {
+    color: #ABDB2A;
+}
+
+.profile-page .profile-body .left-wrapper .social-links a {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-page .profile-body .right-wrapper .latest-photos > .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.profile-page .profile-body .right-wrapper .latest-photos > .row > div {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.profile-page .profile-body .right-wrapper .latest-photos > .row > div figure {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    margin-bottom: 6px;
+}
+
+.profile-page .profile-body .right-wrapper .latest-photos > .row > div figure:hover {
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.profile-page .profile-body .right-wrapper .latest-photos > .row > div figure img {
+    border-radius: .25rem;
+}
+
+.rtl .profile-page .profile-header .cover .cover-body .profile-name {
+    margin-left: 0;
+    margin-right: 17px;
+}
+.img-xs {
+    width: 50px;
+    height: 50px;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.card-header:first-child {
+    border-radius: 0 0 0 0;
+}
+.card-header {
+    padding: 0.875rem 1.5rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #f2f4f9;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 0 0;
+}
+.card-footer {
+    padding: 0.875rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid #f2f4f9;
+}
+
+.grid-margin {
+    margin-bottom: 1rem;
+    margin-top: 30px;
+}
+
+.card {
+    box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+    -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+    -moz-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+    -ms-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}
+.rounded {
+    border-radius: 0.25rem !important;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #f2f4f9;
+    border-radius: 0.25rem;
+}
+
+    /* Estilos para o pop-up */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      background-color: #EAEAEA;
+      border-radius: 10px;
+      width: 500px;
+      position: relative;
+      padding-bottom: 10px;
+      box-shadow: 0 4px 10px 4px;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+        h1 {
+            text-align: center;
+        }
+
+        .carteira {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .carteira-text {
+            margin-right: 10px;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #141034;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #141034;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            display: flex;
+           
+           
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            display: flex;
+        }
+
+        input[type="submit"] {
+            padding: 6px 20px;
+            background-color: #141034;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #211a55;
+        }
+
+        .saldo {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #princ{
+            display: flex;
+        }
+
+        .card {
+    --bs-card-spacer-y: 3rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: var(--bs-border-radius);
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+        }
+    </style>
+</head>
+<body>
+
+                                     <!-------------------------------NAVBAR------------------------------------------->
+	<nav class="navbar navbar-expand-lg navbar-dark no-pad" style="background-color: #EAEAEA" id="header">
+		<div class="container">
+            <img src="../static/logo-sem-fundo-boneco.png" width = "30px" height="30px" alt="Logo WorkLink boneco">
+            <img id="wlpi" src="../static/logo-worklink.png" width = "160px" height="30px" alt="Logo WorkLink" onclick="window.location.href='pagina_inicial.html'">
+			<!--
+            <form class="form-inline" action="/pesquisa_usuario" method="post">
+                <span><div class="input-icons"> 
+                  <i class="fa fa-search icon"></i> 
+                  <input name="pesquisa_user" class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+                  <div class="search-results" id="results"></div>
+              </div></span>
+          </form>
+-->
+	        <button class="navbar-toggler" id="custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+	  		
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<nav class="navbar navbar-light no-pad">
+
+	    		</nav>
+				
+	    		<div class="nav-item dropdown" id="drop-right">
+					<!--
+	    			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center; font-size: 12px; color: #8eb521; padding-left: 420px; padding-right: 2rem;"onMouseOver="this.style.color='#a4cc37" onMouseOut="this.style.color='#8eb521'"><i class="fa fa-user-circle fa-2x"></i><br>Me</a>
+	    		-->
+	    			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color" style = "margin-left: 400px">
+		          	<img id="profile-pic" src="static/ada.PNG" alt="profile"></i><b>Ver Perfil</b></a></a>
+		          		
+		          		<div style="height: 30px; background-color: #f1f8e4" class="dropdown-divide">Conta</div>
+		          		
+		          		<a class="dropdown-item" href="#">Privacidade e Segurança</a>	
+		          		<a class="dropdown-item" href="#">Ajuda<a> 	
+		          		<a class="dropdown-item" href="#">Linguagem<a>
+
+		          		<a class="dropdown-item" href="/" style="border-top: solid 0.03rem lightgrey;">Sair</a>
+						
+	          		</div>
+					
+	  			</div>
+	
+
+  	</nav>
+      
+    <div class="container">
+        <div class="profile-page tx-13">
+            <div class="row">
+                <div class="col-12 grid-margin">
+                    <div class="profile-header">
+                        <div class="cover">
+                            <div class="gray-shade"></div>
+                            <figure>
+                                <img src="../static/capa-padrao.jpg" class="img-fluid" alt="profile cover">
+                            </figure>
+                            <div class="cover-body d-flex justify-content-between align-items-center">
+                                <div>
+                                   <!-- <img class="profile-pic" src="../static/ada.PNG" alt="profile">-->
+                                    <i class="fa fa-user-circle fa-4x"></i>
+                                    <span class="profile-name">{{ nome }} {{ sobrenome }}</span>
+                                    <button id="myButton" class="button.btn.first">Seguir</button>
+                                    <!-- <button id="copiarURL" class="button.btn.first">Copiar Link</button> -->
+                                </div>
+                              
+                            </div>
+                        </div>
+
+                        <script>
+                            var button = document.getElementById("myButton");
+                            var clicked = false;
+                        
+                            button.addEventListener("click", function() {
+                              if (clicked) {
+                                button.innerHTML = 'Seguir';
+                                button.style.backgroundColor = "transparent";
+                               
+                                clicked = false;
+                              } else {
+                                button.innerHTML = 'Seguindo';
+                                button.style.backgroundColor = "#cbee6d";
+                                clicked = true;
+                                var seguido = selectedUser.cod_desenvolvedor
+                                fetch('/follow', {
+                                method: 'POST',
+                                headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                },
+                                body: 'seguido=' + seguido,
+                                })
+                                .then(response => response.text())
+                                .then(data => {
+                                console.log(data); // Exibe a resposta do servidor
+                            });
+                            }
+                            });
+                            </script>
+
+                            <!-- <script>
+                                var button = document.getElementById("copiarURL");
+                                // Faz uma requisição para a API Flask enviando a URL atual
+                                button.addEventListener("click", function() {
+                                    if (clicked) {
+                                        fetch('/url', {
+                                        method: 'POST',
+                                        body: JSON.stringify({ url: window.location.href }),
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                }
+                                });
+                                    }
+                                });
+                            </script> -->
+
+                        <div class="header-links">
+                            <ul class="links d-flex align-items-center mt-3 mt-md-0">
+                                <li class="header-link-item d-flex align-items-center active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns mr-1 icon-md">
+                                        <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path>
+                                    </svg>
+                                    <a class="pt-1px d-none d-md-block" href="#">Perfil</a>
+                                </li>
+                                <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-1 icon-md">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <a class="pt-1px d-none d-md-block" href="#">Projetos</a>
+                                </li>
+                                <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users mr-1 icon-md">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <a class="pt-1px d-none d-md-block" href="#">Conexões<span class="text-muted tx-12"> 3,765</span></a>
+                                </li>
+
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row profile-body">
+                <!-- left wrapper start -->
+                <div class="d-none d-md-block col-md-4 col-xl-3 left-wrapper">
+                    <div class="card rounded">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="card-title mb-0">Sobre</h6>
+                                <div class="dropdown">
+                                    <button class="btn p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal icon-lg text-muted pb-3px">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="19" cy="12" r="1"></circle>
+                                            <circle cx="5" cy="12" r="1"></circle>
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 icon-sm mr-2">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                            </svg> <span class="">Edit</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-branch icon-sm mr-2">
+                                                <line x1="6" y1="3" x2="6" y2="15"></line>
+                                                <circle cx="18" cy="6" r="3"></circle>
+                                                <circle cx="6" cy="18" r="3"></circle>
+                                                <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                            </svg> <span class="">Update</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye icon-sm mr-2">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg> <span class="">View all</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>{{ descricao }}</p>
+                            <div class="mt-3">
+                                <label>Projetos Ativos</label>
+                                <p class="text-muted">2</p>
+                            </div>
+                            <div class="mt-3">
+                                <label>Projetos concluídos</label>
+                                <p class="text-muted">0</p>
+                            </div>
+                            <div class="mt-3">
+                                <label>E-mail</label>
+                                <p class="text-muted">{{ email }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- left wrapper end -->
+                <!-- middle wrapper start -->
+                
+                <div class="col-md-8 col-xl-6 middle-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="card rounded">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                           
+                                            <!-- <img class="img-xs rounded-circle" src="../static/ada.PNG" alt="" style="margin-right: 8px;"> -->
+                                            <!---->
+                                            <i class="fa fa-user-circle fa-4x" style="margin-right: 8px;"></i>
+                                            <div>
+                                                <b style="color: black;">{{ nome }} {{ sobrenome }}</b>&nbsp; {{ tag }}
+                                                <br>
+                                                <p id="pzinho">{{ descricao }}</p>
+                                                <p id="pzinho" style="margin-top: 0px;">1h <i class="fas fa-globe"></i></p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="btn p-0" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal icon-lg pb-3px">
+                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                </svg>
+                                            </button>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="card-body">
+                                    <p class="mb-3 tx-14">Apenas entreguei um novo recurso épico no prazo! 💪🚀 O trabalho árduo e a dedicação compensam sempre. Adoro quando o código funciona perfeitamente e traz sorrisos aos usuários. Continuarei desenvolvendo com paixão e buscando soluções inovadoras.</p>
+                                    <br>
+                                    <strong>#Desenvolvedor #AmoProgramar</strong>
+                                    <img class="img-fluid" src="../../../assets/images/sample2.jpg" alt="">
+                                </div>
+                                <div id="like-option">
+                                    <span>
+                                        <button type="button" class="btn">
+                                            <i class="far fa-thumbs-up"></i>
+                                            Curtir
+                                        </button>
+                                    </span>
+            
+                                    <span>
+                                        <button type="button" class="btn">
+                                            <i class="far fa-comment-dots"></i>
+                                            Comentar
+                                        </button>
+                                    </span>
+                                    <span>
+                                        <button type="button" class="btn">
+                                            <i class="far fa-share-square"></i>
+                                            Compartilhar
+                                        </button>
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- middle wrapper end -->
+                <!-- right wrapper start -->
+                <div class="d-none d-xl-block col-xl-3 right-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <h6 class="card-title">Projetos</h6>
+                                    <div class="latest-photos">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 grid-margin">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <h6 class="card-title">Sugestões para você</h6>
+                                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                        <div class="d-flex align-items-center hover-pointer">
+                                            <img class="img-xs rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                                            <div class="ml-2">
+                                                <p>Meta</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                        <div class="d-flex align-items-center hover-pointer">
+                                            <img class="img-xs rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                            <div class="ml-2">
+                                                <p>Microsoft</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                        <div class="d-flex align-items-center hover-pointer">
+                                            <img class="img-xs rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+                                            <div class="ml-2">
+                                                <p>IBM</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                        <div class="d-flex align-items-center hover-pointer">
+                                            <img class="img-xs rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="">
+                                            <div class="ml-2">
+                                                <p>Apple</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right wrapper end -->
+            </div>
+        </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Página Inicial · WorkLink</title>
+	<link rel="stylesheet" type="text/css" href="../static/stylePagina.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="shortcut icon" href="../static/Wl.ico"type="image/x-icon">
+
+	<script src="https://kit.fontawesome.com/e6223f541e.js" crossorigin="anonymous"></script>
+
+	<script defer src="../static/script.js"></script>
+</head>
+<body id="pi">
+
+<!-- ------------------------------------------ Navbar ------------------------------------------ -->
+
+	<nav class="navbar navbar-expand-lg navbar-dark no-pad" style="background-color: #EAEAEA" id="header">
+		<div class="container">
+            <img src="../static/logo-sem-fundo-boneco.png" width = "30px" height="30px" alt="Logo WorkLink boneco">
+            <img id="wlpi" src="../static/logo-worklink.png" width = "160px" height="30px" alt="Logo WorkLink" onclick="window.location.href='/authlogin#'">
+			
+			<form class="form-inline">
+				<div class="input-icons">
+				  <i class="fa fa-search icon"></i>
+				  <input name="pesquisa_user" class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+				  <div class="search-results" id="results">
+					<ul id="resultsList"></ul>
+				  </div>
+				</div>
+			</form>
+
+	        <button class="navbar-toggler" id="custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+	  		
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<nav class="navbar navbar-light no-pad">
+					<!--
+					<ul class="navbar-nav mr-auto" id="space">
+						<li class="nav-item">
+			    			<a class="nav-link" href="#" style="font-size: 11px"><i class="fa fa-home fa-2x"></i><br>Página inicial</a>
+			  			</li> 
+			  			<li class="nav-item">
+			    			<a class="nav-link" href="#" style="font-size: 11px"><i class="fa fa-users fa-2x"></i><br>Conexões</a>
+					  	</li>
+					  	<li class="nav-item">
+					    	<a class="nav-link" href="#" style="font-size: 11px"><i class="fa fa-briefcase fa-2x"></i><br>Projetos</a>
+					  	</li>
+					  	<li class="nav-item">
+					    	<a class="nav-link" href="#" style="font-size: 11px"><i class="fa fa-comments fa-2x"></i><br>Mensagens</a>
+					  	</li>
+					  	<li class="nav-item">
+					    	<a class="nav-link" href="#" style="font-size: 11px"><i class="fa fa-bell fa-2x"></i><br>Notificações</a>
+					  	</li>
+					</ul>
+					-->
+	    		</nav>
+				
+	    		<div class="nav-item dropdown" id="drop-right">
+					
+	    			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center; font-size: 12px; color: #8eb521; padding-left: 420px; padding-right: 2rem;"onMouseOver="this.style.color='#a4cc37" onMouseOut="this.style.color='#8eb521'"><i class="fa fa-user-circle fa-2x"></i><br>Eu</a>
+	    		
+	    			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color" style = "margin-left: 400px">
+		          		<a class="dropdown-item" href="/perfil"><!--<img id="profile-pic" src="../static/ada.PNG" alt="profile">--><i class="fa fa-user-circle fa-4x"></i><b>{{ nome }} {{ sobrenome }} </b></a></a>
+		          		
+		          		<div style="height: 30px; background-color: #f1f8e4" class="dropdown-divide">Conta</div>
+		          		
+		          		<a class="dropdown-item" href="#">Privacidade e Segurança</a>	
+		          		<a class="dropdown-item" href="#">Ajuda<a> 	
+		          		<a class="dropdown-item" href="#">Linguagem<a>
+<!--
+		          		<div style="height: 30px; background-color: #e1e9ee" class="dropdown-divide">MANAGE</div>
+
+		          		<a class="dropdown-item" href="#">Publicações e atividades</a>
+		          		<a class="dropdown-item" href="#">Job posting account<a> 	
+							-->
+						<a class="dropdown-item" href="/" style="border-top: solid 0.03rem lightgrey;">Sair</a>
+						
+	          		</div>
+					
+	  			</div>
+	
+
+  	</nav>
+
+
+<!-- ------------------------------------------ body ------------------------------------------ -->
+
+	<div class="container">
+
+		<div id="container-top"></div>
+
+		<!-- ------------------------------------------ left elements ------------------------------------------ -->
+		<div class="row">
+			<div class="col-sm-2.5">
+				<aside class="common-properties" id="left-card">
+					<div id="cover-picture">
+					</div>
+						
+					<div id="profile-picture">
+						<!-- <img class="img-xs rounded-circle" src="" alt="" style="margin-right: 8px;"> -->
+							<i class="fa fa-user-circle fa-4x"></i>
+						<br><br>
+						
+						<h6 style="color: black;">
+							{{ nome }} 
+							{{ sobrenome }}
+						</h6>
+						<h6 style="color: grey; font-size: 12px;">
+						{{ descricao }}
+					</h6>
+						<hr>
+					</div>
+
+					<div class="secondary-info">
+							<!-- <a href="#">Publicações que possam interessar</a>
+							<br>
+							-->
+							<a href="#">Seguidores mútuos</a>
+					</div>
+<!--
+					<div class="secondary-info">
+						<a href="#">Access exclusive tools & insights<br><b style="color: black">Try Premium Free for 1 Month</b></a>
+					</div>
+-->
+					<hr>
+
+					<!-- <div class="secondary-info-saveitem">
+						<a href="#"><i class="far fa-bookmark"></i>&emsp;Salvos</a>
+					</div>	 -->
+				</aside>
+			
+				<br>
+
+				<aside class="common-properties" id="left-card-dropdown" style="font-size: 12px;">
+					<div class="nav-item dropdown" id="drop-right">
+		  				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
+		  					Hashtags em comum
+		  				</a>
+		  				
+		  				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color" style="width: 216px;">
+							<a id ="ml-show"class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;Machine Learning</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;JavaScript</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;C#</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;Python</a>
+						</div>
+					</div>
+							<!--
+					<a href="#" class="secondary-info-saveitem"><b>Groups</b></a>
+					<br>
+					<a href="#" class="secondary-info-saveitem" style="color: black;">Events<i class="fa fa-plus fa-2x" style="color: grey; margin-left: 130px;"></i></a>
+-->
+					<div class="nav-item dropdown" id="drop-right">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black">
+		  					
+		  				</a>
+		  				
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color" style="width: 216px;">
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;Backend</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;Python</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;"><i class="fa fa-hashtag"></i>&emsp;Automação</a>
+							<a class="dropdown-item" href="#" style="font-size: 12px;">Ver todas</a>
+						</div>
+					<hr>
+
+						<div class="secondary-info-saveitem" style="text-align: center; padding-left: 0px;">
+							<a href="#" style="padding:10px; color: #8eb521"><b>Descubra</b></a>
+						</div>
+					</div>
+
+				</aside>
+
+				<br>	
+			</div>
+
+		<!-- ------------------------------------------ middle elements ------------------------------------------ -->
+		
+			<div class="col-sm-6">
+				<div class="common-properties" id="new-post-container">
+					<div id="new-post">
+						<button type="button" class="btn" onclick="openForm()" id="new-post-btn">
+							<i class="fa fa-edit"></i>&nbsp;Criar um Projeto
+						</button>
+						
+						<div id="myForm" class="form">
+						  <form class="form-floating" action="/criarProjeto" method='post'>
+							
+							<h2 id="criarprojeto">Criar Projeto</h2>
+					
+							<input class="form-control" type="text" id="name" name="nome_projeto" placeholder="Nome do Projeto">
+
+							
+          					<textarea class="form-control" cols="20" rows="3" name="especificacao" id="textarea" placeholder="Descrição"></textarea>
+							<div id="colun">
+							
+							<input class="form-control" type="number" id="numDev" name="numero_devs" min="1"placeholder="Nº Devs" >
+
+          					<input class="form-control" type="text" name="valor_orcamento" id="valueField" placeholder="Orçamento R$" >
+
+							  <input class="form-control" type="text" name="prazo" id="valueField" value="" tabindex="1" placeholder="Prazo">
+							</div>
+							
+							<input class="form-control" type="text" name="tag_projeto" id="name" value="" tabindex="1" placeholder="#Hashtags">
+
+						<div id="publicar">
+							<button id="btnCancel" class="form-control" type="button" onclick="closeForm()">Cancelar</button>
+							<input id="botao1" type="submit" value="Publicar">
+						</div>
+						  </form>
+						</div>
+
+						<button type="button" class=" btn share-media" style="border-left: 1px solid rgba(0,0,0,.15);">
+							<i class="fa fa-file-alt"></i>
+						</button>
+						<!--
+						<button type="button" class="btn share-media" style="border-left: 1px solid rgba(0,0,0,.15);">
+							<i class="fa fa-video"></i>
+						</button>
+						-->
+						<button type="button" class="btn share-media" style="border-left: 1px solid rgba(0,0,0,.15);">
+							<i class="fa fa-camera"></i>
+						</button>
+					</div>
+
+					<div id="article">
+						<a href="#" style="color: #8eb521;">Comece uma publicação</a>
+					</div>
+				</div>
+
+				<div>
+					<!--
+					<div class="nav-item dropdown" id="drop-right">
+    					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 12px; color: rgba(0,0,0,.6); font-weight: 500; padding-left: 0; padding-right: 0;" onMouseOver="this.style.color='none'" onMouseOut="this.style.color='none'">
+    						<hr style="float: left; width: 85%;">Sort by:&nbsp;<span style="color: black;">Top</span></a>
+    		
+    					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color">
+	          				<a class="dropdown-item" style="font-size: 14px; font-weight: 500;" href="#">Top</a>
+	          				<a class="dropdown-item" style="font-size: 14px; font-weight: 500;" href="#">Recent</a>
+          				</div>
+  					</div>
+					-->
+				</div>
+
+				<br>
+
+				<div class="common-properties" id="show-post-container">
+					<div id="show-comment-on-post">
+						<b style="color: black;">Alguém que você segue&nbsp;</b>comentou essa publicação
+						
+					</div>
+					<div id="show-account-name">
+						<a href="#">
+							<img class="img-xs rounded-circle" src="../static/carol-shaw.jpeg" alt="" style="width: 60px; height: 60px; margin-top: 12px; margin-right: 5px;">
+							<div style="display: inline-table;">
+								<b style="color: black;">Carol Shaw</b>&nbsp; #ProgramadoraDeJogos
+								<br>
+								<p>Desenvolvedora de jogos eletrônicos </p>
+								<p>1h <i class="fas fa-globe"></i></p>
+							</div>
+						</a>
+					</div>
+
+					<div id="caption">
+						<p>Tenho o prazer de compartilhar com todos vocês a emocionante notícia do lançamento do meu mais recente jogo, o 3-D Tic-Tac-Toe!  Como muitos de vocês sabem, tenho trabalhado arduamente nos últimos meses para trazer uma experiência de jogo inovadora e envolvente para todos os entusiastas da diversão digital. <br><br>Este jogo é um marco significativo na indústria dos jogos eletrônicos, pois apresenta uma abordagem completamente nova para o clássico jogo da velha. 💡 Ao adicionar uma dimensão extra à jogabilidade, o 3-D Tic-Tac-Toe oferece uma perspectiva única e desafiadora que certamente cativará jogadores de todas as idades.<br><br>Com gráficos atraentes e uma interface intuitiva, o 3-D Tic-Tac-Toe é fácil de aprender, mas difícil de dominar. Os jogadores serão imersos em um ambiente tridimensional envolvente, onde cada movimento exige estratégia e planejamento cuidadoso.</p>
+						<br>
+						<strong><p>#ProgramadoraDeJogos #IndustriaDosJogos #JogosClassicos</p></strong>
+					</div>
+
+					<div id="post-picture">
+						<img src="../static/3d-tic-tac-toe.PNG" width="540px" height="300px" alt="3d tic tac toe">
+					</div>	
+
+					<div id="likes">
+						<ul>
+							<li>
+								<button type="button" class="btn">
+									<i class="fas fa-thumbs-up" style="color: #ABDB2A;"></i>
+									<i class="fas fa-sign-language" style="color: green;"></i>
+									<i class="fas fa-heart" style="color: red;"></i>
+									<span>6,043</span>&nbsp;<i class="fas fa-circle" style="font-size: 4px; color: black;"></i>&nbsp;
+								</button>
+							</li>
+
+							<li>
+								<button type="button" class="btn">
+									<span>213 comentários</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+
+					<div id="like-option">
+						<span>
+							<button type="button" class="btn">
+								<i class="far fa-thumbs-up"></i>
+								Curtir
+							</button>
+						</span>
+
+						<span>
+							<button type="button" class="btn">
+								<i class="far fa-comment-dots"></i>
+								Comentar
+							</button>
+						</span>
+						<span>
+							<button type="button" class="btn">
+								<i class="far fa-share-square"></i>
+								Compartilhar
+							</button>
+						</span>
+					</div>
+				</div>
+
+				<div class="common-properties" id="show-post-container2">
+
+					<div id="show-account-name">
+						<a href="#">
+							<img class="img-xs rounded-circle" src="../static/alan-turing.jpg" alt="" style="width: 60px; height: 60px; margin-top: 12px; margin-right: 5px;">
+							<div style="display: inline-table;">
+								<b style="color: black;">Alan Turing Enterprise</b>&nbsp; #Computabilidade 
+								<br>
+								<p>Pai da computação </p>
+								<p>8h <i class="fas fa-globe"></i></p>
+							</div>
+						</a>
+					</div>
+
+					<div id="caption">
+						<strong><p>Projeto:</strong> Sistema de Reconhecimento de Padrões</p> 
+
+						<strong><p>Quantidade de desenvolvedores:</strong> 6</p>
+
+						<strong><p>Remuneração:</strong> R$90.000</p>
+
+						<strong><p>Tempo de contrato:</strong> 6 meses </p>
+						<p>Estou solicitando o desenvolvimento de um sistema inovador de reconhecimento de padrões, baseado nos princípios pioneiros da máquina de Turing. O objetivo é criar um sistema capaz de identificar padrões em dados complexos, como imagens ou sequências de texto. <br>O sistema deve ser construído utilizando técnicas avançadas de aprendizado de máquina, utilizando algoritmos de aprendizado supervisionado ou não supervisionado. Será necessário treinar um modelo de machine learning para que ele seja capaz de reconhecer e categorizar padrões em dados de entrada.</p>
+						<strong><p>#MachineLearning #MáquinaDeTuring </p></strong>
+					</div>
+
+					<div id="candidatar">
+						<span>
+							<button type="button" class="btn">
+								<img src="../static/btn-candidatar.png" alt="" height="28px" width="28px">
+								Candidatar-se ao Projeto
+							</button>
+						</span>
+				
+					</div>
+				</div>
+
+
+				<div class="common-properties" id="show-post-container2">
+					<div id="show-account-name">
+						<a href="#">
+							<img class="img-xs rounded-circle" src="../static/twitter.jpeg" alt="" style="width: 60px; height: 60px; margin-top: 12px; margin-right: 5px;">
+							<div style="display: inline-table;">
+								<b style="color: black;">Twitter, Inc.</b>&nbsp; #socialmedia
+								<br>
+								<p>Passarinho azul</p>
+								<p>2d <i class="fas fa-globe"></i></p>
+							</div>
+						</a>
+					</div>
+
+					<div id="caption">
+						<strong><p>Projeto:</strong>ViralRetweetBot</p> 
+
+						<strong><p>Quantidade de desenvolvedores:</strong> 2</p>
+
+						<strong><p>Remuneração:</strong> R$50.000</p>
+
+						<strong><p>Tempo de contrato:</strong> 2 meses </p>
+						<p>Precisamos de um bot que seja projetado para identificar e retweetar automaticamente os tweets virais do dia, compartilhando conteúdo popular e relevante com seus seguidores, realizando o monitoramento, a seleção e a diversidade dos tópicos.</p>
+						<strong><p>#bot #automação #MachineLearning </p></strong>
+					</div>
+
+					<div id="candidatar">
+						<span>
+							<button type="button" class="btn">
+								<img src="../static/btn-candidatar.png" alt="" height="28px" width="28px">
+								Candidatar-se ao Projeto
+							</button>
+						</span>
+				
+					</div>
+				</div>
+
+		</div>
+
+			<!-- ------------------------------------------ rigth elements ------------------------------------------ -->
+			
+			<div class="col-sm-3.5">
+				<aside class="common-properties" id="righh-card">
+					<div id="news-views">
+						<!--
+						<span style="float: right;">
+							<button type="button" class="btn" style="background: transparent; color: rgba(0,0,0,.6); padding: 0 !important; border: 0 !important;">
+								<i class="fas fa-info-circle"></i>
+							</button>
+						</span>
+					</div>
+
+					<ul id="news-section">
+						<li>
+							<a href="#">
+								<div>
+									<i class="fas fa-circle" style="margin-left: 12px;font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 1</span>
+								</div>
+								<span class="news-day">1d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,706 readers</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div>
+									<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 2</span>
+								</div>
+								<span class="news-day">2d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;11,255 readers</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div>
+									<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 3</span>
+								</div>
+								<span class="news-day">2d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;4,666 readers</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div>
+									<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 4</span>
+								</div>
+								<span class="news-day">2d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,714 readers</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div>
+									<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 5</span>
+								</div>
+								<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+							</a>
+						</li>
+
+						<li id="dropdown-news">
+							<div class="nav-item dropdown" id="drop-right">
+	    						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Show more</a>
+    							
+    							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color">
+			          				<a class="dropdown-item" href="#">
+			          					<div>
+											<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 6</span>
+										</div>
+										<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+									</a>
+								
+		          					<a class="dropdown-item" href="#">
+		          						<div>
+											<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 7</span>
+										</div>
+										<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+									</a>
+									
+									<a class="dropdown-item" href="#">
+			          					<div>
+											<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 8</span>
+										</div>
+										<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+									</a>
+									<a class="dropdown-item" href="#">
+			          					<div>
+											<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 9</span>
+										</div>
+										<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+									</a>
+									<a class="dropdown-item" href="#">
+			          					<div>
+											<i class="fas fa-circle" style="margin-left: 12px; font-size: 9px; color: #0ea7e8"></i>&emsp;<span>News Headline 10</span>
+										</div>
+										<span class="news-day">3d ago&nbsp;<i class="fas fa-circle" style="font-size: 4px;"></i>&nbsp;1,727 readers</span>
+									</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</aside>
+
+				<br>
+-->
+				<aside class="common-properties" id="advertisement">
+					<img src="../static/freelancer.jpg" style="width: 288px; height: 288px">
+				</aside>
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

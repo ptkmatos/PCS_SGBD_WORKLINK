@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Desenvolvedor · WorkLink</title>
+    <link rel="shortcut icon" href="../static/Wl.ico"type="image/x-icon">
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+      function showAlert() {
+alert("Conta criada com sucesso!");
+}
+</script>
+<style>
+body {
+background-color: #141034;
+}
+</style>
+</head>
+<body>
+  <div class="container_form">
+    <h1>Criar conta como desenvolvedor</h1>
+    <form class="form" action="/signup_developer" method="post">
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input type="text" name="nome" class="form_input" id="nome" placeholder="Nome" required>
+        </div>
+
+        <div class="form_grupo">
+          <label for="sobrenome" class="form_label">Sobrenome</label>
+          <input type="text" name="sobrenome" class="form_input" id="nome" placeholder="Sobrenome" required>
+      </div>
+
+      <div class="form_grupo">
+        <label for="CPF" class="form_label">CPF</label>
+        <input type="text" name="cpf" class="form_input" id="CPF" placeholder="CPF" required>
+    </div>
+
+        <div class="form_grupo">
+            <label for="e-mail" class="form_label">Email</label>
+            <input type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com" required>
+        </div>
+        
+
+        <div class="form_grupo">
+            
+            <label for="estadocivil" class="text">Gênero</label>
+            <select name="genero" class="dropdown" required>
+                
+                <option selected disabled class="form_select_option" value="">Selecione</option>
+                <option value="Feminino" class="form_select_option">Feminino</option>
+                <option value="Masculino" class="form_select_option">Masculino</option>
+                <option value="Não-Binário" class="form_select_option">Não-Binário</option>                    
+                <option value="Outro" class="form_select_option">Outro</option>                    
+            
+            </select>
+
+        </div>   
+
+        <div class="form_grupo">
+          <label for="datanascimento" class="form_label">Data de Nascimento</label>
+          <input type="date"  min= "1940-12-31" max="2006-12-31" name="data_nascimento" class="form_input" id="datanascimento" placeholder="Data de Nascimento" required>
+      </div>        
+
+      <div class="form_grupo">
+        <label for="Telefone" class="form_label">Telefone</label>
+        <input type="text" name="telefone" class="form_input" id="Telefone" placeholder="Telefone" required>
+    </div>
+
+    <div class="form_grupo">
+      <label for="Conta" class="form_label">Conta bancária (xxxx/xxxxx-x)</label>
+      <input type="text" name="conta" class="form_input" id="Conta" placeholder="Conta" required>
+  </div>
+
+  <div class="form_grupo">
+     <label for="Senha" class="forn_label">Senha</label>
+     <input type="password" name="senha" class="form_input" id="Senha" placeholder="Senha" required>
+</div>
+        <div class="form_message">
+                
+          <label for="message" class="form_message_label">Descrição:</label>
+          <textarea name="descricao" id="experiencia"  maxlength="100" style="resize: none; height: 35px; width: 270px;" class="form_input message_input" required></textarea>
+
+      </div>
+
+    <div class="form_message">
+                
+      <label for="message" class="form_message_label">Hashtags:</label>
+      <textarea name="tag" id="tag"  maxlength="300" style="resize: none; height: 35px; width: 270px;" class="form_input message_input" required></textarea>
+
+  </div>
+
+            <div class="submit">
+
+              <input type="hidden" name="acao" value="enviar">
+              <button type="submit" name="Submit" class="submit_btn" onclick= "'showAlert()'" onclick="window.location.href='/'">Cadastrar-se</button>
+            
+            </div>
+    </form>
+
+</div><!--container_form-->
+    </body>
+</body>
+</html>

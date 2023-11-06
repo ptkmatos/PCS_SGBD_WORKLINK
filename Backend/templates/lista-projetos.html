@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Projetos</title>
+    <link rel="shortcut icon" href="../static/Wl.ico"type="image/x-icon">
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #141034;
+    }
+    #projeto{
+    width: 500px;
+    margin-left: 720px;
+    margin-top: 20px;
+    }
+
+    .proj {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px;
+    justify-content: center;
+    padding-left: 400px;
+    padding-right: 400px;
+    }
+
+    .project {
+    width: 240px;
+    height: fit-content;
+    background-color: #EAEAEA;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    }
+
+    .project h2 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .project .status {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .project button {
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #ABDB2A;
+    border-color: #ABDB2A;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; 
+    border-radius: 5px;
+    margin-top: 2px;
+    }
+
+    .project button:hover {
+      background-color: #c4ee52;
+    }
+
+    .project .delete-button {
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #b10000;
+    border-color: #b10000;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; 
+    border-radius: 5px;
+    margin-top: 2px;
+    }
+
+    .project .delete-button:hover {
+      background-color: #ff0000;
+    }
+
+    
+  </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark no-pad" style="background-color: #EAEAEA" id="header">
+		<div class="container">
+            <img src="../static/logo-sem-fundo-boneco.png" width = "30px" height="30px" alt="Logo WorkLink boneco">
+            <img id="wlpi" src="../static/logo-worklink.png" width = "160px" height="30px" alt="Logo WorkLink" onclick="window.location.href='pagina_inicial.html'">
+			<!--
+            <form class="form-inline" action="/pesquisa_usuario" method="post">
+                <span><div class="input-icons"> 
+                  <i class="fa fa-search icon"></i> 
+                  <input name="pesquisa_user" class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+                  <div class="search-results" id="results"></div>
+              </div></span>
+          </form>
+-->
+	        <button class="navbar-toggler" id="custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+	  		
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<nav class="navbar navbar-light no-pad">
+
+	    		</nav>
+				
+	    		<div class="nav-item dropdown" id="drop-right">
+					<!--
+	    			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center; font-size: 12px; color: #8eb521; padding-left: 420px; padding-right: 2rem;"onMouseOver="this.style.color='#a4cc37" onMouseOut="this.style.color='#8eb521'"><i class="fa fa-user-circle fa-2x"></i><br>Me</a>
+	    		-->
+	    			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-item-color" style = "margin-left: 400px">
+		          	<img id="profile-pic" src="static/ada.PNG" alt="profile"></i><b>Ver Perfil</b></a></a>
+		          		
+		          		<div style="height: 30px; background-color: #f1f8e4" class="dropdown-divide">Conta</div>
+		          		
+		          		<a class="dropdown-item" href="#">Privacidade e Segurança</a>	
+		          		<a class="dropdown-item" href="#">Ajuda<a> 	
+		          		<a class="dropdown-item" href="#">Linguagem<a>
+
+		          		<a class="dropdown-item" href="/" style="border-top: solid 0.03rem lightgrey;">Sair</a>
+						
+	          		</div>
+					
+	  			</div>
+	
+
+  	</nav>
+      <img id="projeto" src="../static/projetos-pagina.png" alt="">
+      <div class="proj" id="project-list"></div>
+      <script>
+        
+        var projects = [
+          { name: "Projeto 1", descricao: "ablubeleuabnleue", status: "Em andamento" },
+          { name: "Projeto 2", descricao: "ablubeleuabnleue", status: "Concluído" },
+          { name: "Projeto 3", descricao: "ablubeleuabnleue", status: "Não iniciado" },
+          { name: "Projeto 4", descricao: "ablubeleuabnleue", status: "Em andamento" },
+
+         
+        ];
+    
+        // Função para criar os retângulos de projetos na página
+        function createProjectElement(project) {
+          var projectElement = document.createElement("div");
+          projectElement.classList.add("project");
+    
+          var projectName = document.createElement("h2");
+          projectName.textContent = project.name;
+          projectElement.appendChild(projectName);
+    
+          var projectDescription = document.createElement("p");
+          projectDescription .textContent = project.descricao;
+          projectElement.appendChild(projectDescription);
+    
+          var projectStatus = document.createElement("div");
+          projectStatus.classList.add("status");
+          projectStatus.textContent = "Status: " + project.status;
+          projectElement.appendChild(projectStatus);
+    
+          var valorDoFlask = "{{ valorDoFlask }}";
+
+          //se for EMPRESA, mostra os botoes
+          if (valorDoFlask === "valorUsuario") {
+            var editButton = document.createElement("button");
+          editButton.textContent = "Editar projeto";
+          projectElement.appendChild(editButton);
+    
+          var deleteButton = document.createElement("button");
+          deleteButton.textContent = "Excluir projeto";
+          deleteButton.classList.add("delete-button"); // Adicionando a classe CSS
+          projectElement.appendChild(deleteButton);
+    
+          }else{
+            var editButton = document.createElement("button");
+            editButton.textContent = "Ver mais";
+            projectElement.appendChild(editButton);
+          }
+    
+          return projectElement;
+        }
+    
+        // Função para adicionar os projetos na página
+        function renderProjects() {
+          var projectList = document.getElementById("project-list");
+    
+          projects.forEach(function(project) {
+            var projectElement = createProjectElement(project);
+            projectList.appendChild(projectElement);
+          });
+        }
+    
+        // Chamada da função para exibir os projetos na página
+        renderProjects();
+      </script>
+    
+</body>
+</html>

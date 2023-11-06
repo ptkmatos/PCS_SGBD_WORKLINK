@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar perfil · WorkLink</title>
+    <link rel="shortcut icon" href="static/Wl.ico"type="image/x-icon">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script>
+              function showAlert() {
+      alert("Conta excluida com sucesso!");
+    }
+    </script>
+<style>
+    body{
+    margin-top:20px;
+    background:#EAEAEA
+    }
+    #botao{
+    color: #fff;
+    background-color: #ABDB2A;
+    border-color: #ABDB2A;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; 
+    border-radius: 5px;
+}
+#delete{
+    color: #fff;
+    background-color: #b22306;
+    border-color: #b22306;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; 
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#delete:hover {
+    background-color: #ff2a00;
+   
+  }
+  
+  #delete:active {
+    background-color: #c13215;
+    box-shadow: none;
+  }
+
+#botaoSair{
+    color: #fff;
+    background-color: #0f0a30;
+    border-color: #0f0a30;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; 
+    border-radius: 5px;
+}
+#botao:hover {
+    background-color: #8eb521;
+   
+  }
+  
+  #botao:active {
+    background-color: #7DAE1A;
+    box-shadow: none;
+  }
+
+  #botaoSair:hover {
+    background-color: #1c1357;
+   
+  }
+  #botaoSair:active {
+    background-color: #211956;
+    box-shadow: none;
+  }
+
+  .bg-gray-900 {
+      background-color: #1a202c;
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .border-t-4 {
+      border-top-width: 4px;
+    }
+
+    .border-red-600 {
+      border-color: #dc2626;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-gray-700 {
+      color: #4b5563;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .p-4 {
+      padding: 16px;
+    }
+
+    .rounded {
+      border-radius: 0.25rem;
+    }
+
+    .max-w-sm {
+      max-width: 24rem;
+    }
+
+    .pt-0 {
+      padding-top: 0;
+    }
+
+    .bg-red-600 {
+      background-color: #dc2626;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .text-black {
+      color: #000;
+    }
+
+    .list-disc {
+      list-style-type: disc;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .pt-2 {
+      padding-top: 0.5rem;
+    }
+
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .pt-8 {
+      padding-top: 2rem;
+    }
+
+    .w-1{
+      width: 50%;
+    }
+
+    .mr-1 {
+      margin-right: 0.25rem;
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .border {
+      border-width: 1px;
+    }
+
+    .text-gray-600 {
+      color: #4b5563;
+    }
+
+    .border-gray-400 {
+      border-color: #cbd5e0;
+    }
+
+    .hover:bg-gray-300:hover {
+      background-color: #d1d5db;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .ml-1 {
+      margin-left: 0.25rem;
+    }
+
+    .bg-red-600 {
+      background-color: #dc2626;
+    }
+
+    .border-red-600 {
+      border-color: #dc2626;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .border-gray-500 {
+      border-color: #6b7280;
+    }
+
+    .hover:bg-red-700:hover {
+      background-color: #c53030;
+    }
+
+    .hover:border-red-700:hover {
+      border-color: #c53030;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row flex-lg-nowrap">
+  <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+
+  </div>
+
+  <div class="col">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="e-profile">
+              <div class="row">
+                <div class="col-12 col-sm-auto mb-3">
+                  <div class="mx-auto" style="width: 140px;">
+                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ nome }}</h4>
+                    <div class="mt-2">
+                      <button id="botao" type="button">
+                        <i class="fa fa-fw fa-camera"></i>
+                        <span>Escolher arquivo</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-center text-sm-right">
+                    <span class="badge badge-secondary">Desenvolvedor</span>
+                    <div class="text-muted"><small>Entrou em junho de 2023</small></div>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav nav-tabs">
+                <li class="nav-item"><a href="" class="active nav-link">Configurações</a></li>
+              </ul>
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                  <form class="form" novalidate="" action="/edita_perfil" method="POST">
+                    <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Nome</label>
+                              <input class="form-control" type="text" name="name" placeholder="Nome" value="{{ nome }}">
+                            </div>
+                            <label>Gênero</label>
+                            <select name="genero" class="dropdown">
+                                <option selected disabled class="form_select_option" value="">Selecione</option>
+                                <option value="Feminino" class="form_select_option">Feminino</option>
+                                <option value="Masculino" class="form_select_option">Masculino</option>
+                                <option value="Não-Binário" class="form_select_option">Não-Binário</option>                    
+                                <option value="Outro" class="form_select_option">Outro</option>                    
+                            </select>
+                            <div class="form-group">
+                                <label>Conta Bancária</label>
+                                <input class="form-control" type="text" name="contabancaria" value="{{ contabancaria }}" placeholder="Conta bancária">
+                              </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Sobrenome</label>
+                              <input class="form-control" type="text" name="sobrenome" placeholder="Sobrenome" value="{{ sobrenome }}">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Telefone</label>
+                                    <input class="form-control" type="text" name="telefone" placeholder="Telefone" value="{{ telefone }}" >
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Hashtags</label>
+                                    <input class="form-control" type="text" name="Hashtags" placeholder="{{ hashtags }}" value= "{{ hashtags }}">
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="form-group">
+                              <label>Descrição</label>
+                              <textarea name="descricao" class="form-control" rows="5" placeholder="" value="">{{ descricao }}</textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-6 mb-3">
+                        <div class="mb-2"><b>Alterar senha</b></div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Senha atual</label>
+                              <input class="form-control" type="password" placeholder="••••••••••••">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Nova senha</label>
+                              <input class="form-control" name="password" type="password" placeholder="••••••••••••">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Confirmar <span class="d-none d-xl-inline">Senha</span></label>
+                              <input class="form-control" type="password" placeholder="••••••••••••"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col d-flex justify-content-end">
+                        <button action="/edita_perfil" method="post" id="botao" type="submit">Salvar alterações</button>
+                      </div>
+                    </div>
+                    
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 mb-3">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="px-xl-3">
+              <button id="botaoSair" onclick="window.location.href='/'">
+                <i class="fa fa-sign-out"></i>
+                <span>Sair</span>
+              </button>
+            </div>
+            <div>
+                <button id="delete" onclick="openDeleteAccountPopup()">Excluir conta</button>
+              </div>    
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">Suporte</h6>
+            <p class="card-text">Dúvidas? Entre em contato com nosso suporte!</p>
+            <button type="button" id="botao">Contate-nos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<script>
+    function openDeleteAccountPopup() {
+      var popup = document.createElement('div');
+      popup.innerHTML = `
+      <div class="mt-20 p-4 rounded bg-white max-w-sm text-center border-t-4 border-red-600 mx-auto text-gray-700 pt-0">
+        <span class="bg-red-600 text-white p-4 rounded-full inline-flex -mt-8 mb-2">
+          <svg class="fill-current w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>
+        </span>
+        <h3 class="font-bold text-2xl text-black mb-2">Excluir conta?</h3>
+        <p>Você perderá permanentemente:</p>
+        <ul class="list-disc inline-block text-left pt-2 ml-2">
+          <li>Perfil</li>
+          <li>Publicações</li>
+          <li>Fotos</li>
+        </ul>
+        <div class="flex pt-8">
+          <button class="w-1/2 mr-1 bg-white border text-gray-600 border-gray-400 hover:bg-gray-300 py-2 px-4 rounded font-medium">Cancelar</button>
+          <a href="/delete_conta" method="POST"><button onclick= "showAlert()" class="w-1/2 ml-1 bg-red-600 border border-red-600 text-white border-gray-500 hover:bg-red-700 hover:border-red-700 py-2 px-4 rounded font-medium" href="/">Excluir Conta</button>
+        </div>
+      </div>
+      `;
+
+      popup.style.position = 'fixed';
+      popup.style.top = '50%';
+      popup.style.left = '50%';
+      popup.style.transform = 'translate(-50%, -50%)';
+      popup.style.zIndex = '9999';
+      popup.style.backgroundColor = '#1a202c';
+
+      document.body.appendChild(popup);
+    }
+  </script>
+</body>
+</html>
