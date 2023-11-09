@@ -1,6 +1,30 @@
-import pymongo
+import app as app
+from flask import Flask, jsonify
+from pymongo import MongoClient
 from calendar import monthrange
 class Database:
+
+    def connect():
+
+        app = Flask(__name__)
+
+        # Configurações do MongoDB
+        app.config['MONGO_URI'] = 'mongodb://localhost:27017/DB_WorkLink'
+
+        # Inicialização do cliente MongoDB
+        mongo = MongoClient(app.config['MONGO_URI'])
+        db = mongo.get_database()
+
+        try:
+            # Tentativa de estabelecer a conexão
+            client = mongo
+
+            # Verifica a conexão acessando o nome de um banco de dados existente
+            db = client.get_database()
+            print("Conectado ao MongoDB com sucesso!")
+
+        except Exception as e:
+            print("Erro ao conectar ao MongoDB:", e)
     def insert(self, values, tipo):
         if tipo == True: # Indica que é um desenvolvedor
             query = """ INSERT INTO DESENVOLVEDOR (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta_bancaria, senha, descricao, tag_desenvolvedor) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
@@ -261,8 +285,4 @@ class Database:
         tupla = self.cursor.fetchall()
         return tupla
 
-    def connect():
-        cliente = pymongo.MongoClient("mongodb://localhost:27017/")
-        meu_banco = cliente['DB_WorkLink']
-        print(meu_banco)
-        print(meu_banco.list_collection_names())
+
