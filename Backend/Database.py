@@ -1,47 +1,46 @@
-import app as app
 from flask import Flask, jsonify
 from pymongo import MongoClient
 from calendar import monthrange
+
+import pymongo
 class Database:
+    cliente = pymongo.MongoClient("mongodb://localhost:27017/")
+    meu_banco = cliente['DB_WorkLink']
 
     def connect():
-
-        app = Flask(__name__)
-
-        # Configurações do MongoDB
-        app.config['MONGO_URI'] = 'mongodb://localhost:27017/DB_WorkLink'
-
-        # Inicialização do cliente MongoDB
-        mongo = MongoClient(app.config['MONGO_URI'])
-        db = mongo.get_database()
-
-        try:
-            # Tentativa de estabelecer a conexão
-            client = mongo
-
-            # Verifica a conexão acessando o nome de um banco de dados existente
-            db = client.get_database()
-            print("Conectado ao MongoDB com sucesso!")
-
-        except Exception as e:
-            print("Erro ao conectar ao MongoDB:", e)
+        cliente = pymongo.MongoClient("mongodb://localhost:27017/")
+        meu_banco = cliente['DB_WorkLink']
+        Database.desenvolvedor_collection = Database.meu_banco['usuario']
+        print(meu_banco)
+        print(meu_banco.list_collection_names())
+    """
     def insert(self, values, tipo):
         if tipo == True: # Indica que é um desenvolvedor
-            query = """ INSERT INTO DESENVOLVEDOR (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta_bancaria, senha, descricao, tag_desenvolvedor) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+            query =  INSERT INTO DESENVOLVEDOR (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta_bancaria, senha, descricao, tag_desenvolvedor) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             self.cursor.execute(query, values)
             self.con.commit() # INSERT REALIZADO
             cod_desenvolvedor = self.cursor.lastrowid
-            query_saldo = """INSERT INTO SALDO_DESENVOLVEDOR (cod_desenvolvedor, saldo) VALUES (%s, %s)"""
+            query_saldo = INSERT INTO SALDO_DESENVOLVEDOR (cod_desenvolvedor, saldo) VALUES (%s, %s)
             self.cursor.execute(query_saldo, (cod_desenvolvedor, 0))
             self.con.commit()  # Inserção na tabela SALDO_DESENVOLVEDOR
-        else:
-            query = """ INSERT INTO EMPRESA (cnpj, razao_social, email, telefone, conta_bancaria, senha, area_negocio, cep) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
+            
+            else:
+            query =  INSERT INTO EMPRESA (cnpj, razao_social, email, telefone, conta_bancaria, senha, area_negocio, cep) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             self.cursor.execute(query, values)
             self.con.commit() # INSERT REALIZADO
             cod_empresa = self.cursor.lastrowid
-            query_saldo = """INSERT INTO SALDO_EMPRESA (cod_empresa, saldo) VALUES (%s, %s)"""
+            query_saldo = INSERT INTO SALDO_EMPRESA (cod_empresa, saldo) VALUES (%s, %s)
             self.cursor.execute(query_saldo, (cod_empresa, 0))
             self.con.commit()  # Inserção na tabela SALDO_EMPRESA
+            
+    """
+    def insert(usuario, tipo):
+        if tipo:
+            # Insira no MongoDB
+            Database.desenvolvedor_collection.insert_one(usuario)
+            print("Usuário cadastrado com sucesso no MongoDB.")
+            
+
 
     def update(self, coluna, dado, tabela, email):
         self.cursor.execute(f'SET FOREIGN_KEY_CHECKS=0;')
@@ -252,8 +251,8 @@ class Database:
         return True
     
     # -- CRUD PROJETO
-    def insertProjeto(self, values):
-        query = """ INSERT INTO `PROJETO` (`cod_empresa`, `especificacao`, `valor_orcamento`, `prazo`, `status_projeto`, `tag_projeto`, `nome_projeto`, `numero_devs`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
+""" def insertProjeto(self, values):
+        query =  INSERT INTO `PROJETO` (`cod_empresa`, `especificacao`, `valor_orcamento`, `prazo`, `status_projeto`, `tag_projeto`, `nome_projeto`, `numero_devs`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         self.cursor.execute(query, values)
         self.con.commit() # INSERT REALIZADO
 
@@ -286,3 +285,4 @@ class Database:
         return tupla
 
 
+"""

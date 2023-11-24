@@ -1,4 +1,4 @@
-""" from flask import Flask, render_template, request, redirect, url_for, abort, jsonify, flash
+from flask import Flask, app, render_template, request, redirect, url_for, abort, jsonify, flash
 from Empresa import Empresa
 from Database import Database
 from Usuario import Usuario
@@ -363,12 +363,28 @@ def get_url():
     print(url)
     return 'URL recebida com sucesso'
 
-if __name__ == "__main__":
-    app.run()
 
-VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify" """
+VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"
+ 
+    
 def main():
     from Database import Database
+    usuario_mongo = {
+    "tipoUsuario": "desenvolvedor",
+    "email": "teste@email.com",
+    "senha": "1222212121",
+    "telefone": "212323224002",
+    "nome": "Usuario Teste Connect",
+    "genero": "Feminino",
+    "data_nascimento": "30/10/2001",
+    "cpf": "01234567811",
+    "habilidades": ["JavaScript", "Python"],
+    "experiencia": "10 anos",
+    "tag_desenvolvedor": ["backend", "IA"],
+    "status": True
+}
     Database.connect()
+    Desenvolvedor.criaDesenvolvedor(usuario_mongo)
 if __name__ == "__main__":
     main()
+    app.run()
