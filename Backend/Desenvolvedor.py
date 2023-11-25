@@ -2,16 +2,25 @@ import Usuario
 from Database import Database
 # OS GETTERS VÃO SER CONSULTAS NO BANCO DE DADOS PEDINDO AQUELA VARIAVEL
 class Desenvolvedor(Usuario.Usuario): 
-    """  
+ 
     def criaDesenvolvedor(self, nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta, senha, descricao, tag):
-        values = (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta, senha, descricao, tag)
+        usuario_mongo = {
+            "email": f'{email}',
+            "senha": f'{senha}',
+            "telefone": f'{telefone}',
+            "nome": f'{nome}',
+            "genero": f'{genero}',
+            "data_nascimento": f'{data_nascimento}',
+            "cpf": f'{CPF}',
+            "habilidades": f'{descricao}',
+            "experiencia": f'{conta}',
+            "tag_desenvolvedor": f'{tag}',
+            "status": True
+        }
+        #values = (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta, senha, descricao, tag)
         tipo = True
-        Database.connect(self)
-        Database.insert(self, values, tipo)
-""" 
-    def criaDesenvolvedor(usuario):
-        tipo = True  # Indica que é um desenvolvedor
-        Database.insert(usuario, tipo)
+        Database.insert(self, usuario_mongo, tipo)
+
     # GETTERS
     def getNome(self):
         Database.connect(self)

@@ -34,10 +34,11 @@ class Database:
             self.con.commit()  # Inserção na tabela SALDO_EMPRESA
             
     """
-    def insert(usuario, tipo):
+    def insert(self, usuario_mongo, tipo):
         if tipo:
+            Database.connect()
             # Insira no MongoDB
-            Database.desenvolvedor_collection.insert_one(usuario)
+            Database.desenvolvedor_collection.insert_one(usuario_mongo)
             print("Usuário cadastrado com sucesso no MongoDB.")
             
 

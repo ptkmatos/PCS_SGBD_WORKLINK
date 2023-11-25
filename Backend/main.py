@@ -140,6 +140,7 @@ def regdev():
         print(senha)
         return redirect(url_for('home'))
     
+    
 @app.route('/signup_enterprise', methods=['POST'])
 def regEmp():
     cnpj = request.form.get('cnpj')
@@ -369,22 +370,7 @@ VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"
     
 def main():
     from Database import Database
-    usuario_mongo = {
-    "tipoUsuario": "desenvolvedor",
-    "email": "teste@email.com",
-    "senha": "1222212121",
-    "telefone": "212323224002",
-    "nome": "Usuario Teste Connect",
-    "genero": "Feminino",
-    "data_nascimento": "30/10/2001",
-    "cpf": "01234567811",
-    "habilidades": ["JavaScript", "Python"],
-    "experiencia": "10 anos",
-    "tag_desenvolvedor": ["backend", "IA"],
-    "status": True
-}
-    Database.connect()
-    Desenvolvedor.criaDesenvolvedor(usuario_mongo)
+    
 if __name__ == "__main__":
     main()
     app.run()
