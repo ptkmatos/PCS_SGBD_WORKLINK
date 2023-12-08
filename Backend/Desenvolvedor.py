@@ -17,7 +17,6 @@ class Desenvolvedor(Usuario.Usuario):
             "tag_desenvolvedor": f'{tag}',
             "status": True
         }
-        #values = (nome, sobrenome, CPF, email, genero, data_nascimento, telefone, conta, senha, descricao, tag)
         tipo = True
         Database.insert(self, usuario_mongo, tipo)
 

@@ -22,7 +22,7 @@ export default function () {
             cpf: "01234567811",
             habilidades: ["JavaScript", "Python"],
             experiencia: "10 anos",
-            tag_desenvolvedor: ["backend", "IA"],
+            tag_desenvolvedor: ["backend", "IA"]
     });
   
     const response = http.post(url, payload, { headers });
